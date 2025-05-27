@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Now Free Games</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      body {
+        background: linear-gradient(120deg, #30353b 0%, #000000 100%);
+        min-height: 100vh;
+      }
+      .island-group {
+        display: flex;
+        gap: 1rem;
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 1050;
+        align-items: center;
+        text-align: center;
+      }
+      .dynamic-island-navbar {
+        background: #484849;
+        color: #fff;
+        border-radius: 2.5rem;
+        padding: 0.7rem 1.5rem;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+        display: inline-flex;
+        align-items: center;
+        width: auto;
+        min-width: 0;
+        transition: border-radius 2s;
+      }
+      .navbar-brand {
+        color: #fff !important;
+        font-weight: 700;
+        font-size: 1.3rem;
+        letter-spacing: 0.03em;
+      }
+      .navbar-nav {
+        flex-direction: row;
+        align-items: center;
+      }
+      .navbar-nav .nav-link {
+        color: #fff !important;
+        margin: 0 0.25rem;
+        border-radius: 1.5rem;
+        transition: background 0.2s;
+        white-space: nowrap;
+      }
+      .navbar-nav .nav-link:hover, .navbar-nav .nav-link.active {
+        background: #232326;
+      }
+      .navbar-toggler {
+        border: none;
+        color: #fff;
+      }
+      .navbar-toggler:focus {
+        box-shadow: none;
+      }
+      @media (max-width: 991.98px) {
+        .island-group {
+          position: static !important;
+          left: unset !important;
+          transform: none !important;
+          flex-direction: column;
+          align-items: center;
+          gap: 1.5rem;
+          width: 100%;
+          padding-top: 20px;
+          text-align: center;
+        }
+        .dynamic-island-navbar {
+          width: 95vw !important;
+          min-width: 0;
+          padding: 0.9rem 0.7rem;
+          justify-content: center;
+          border-radius: 2.5rem !important;
+          display: flex;
+        }
+        .navbar-nav {
+          flex-direction: column;
+          align-items: stretch;
+        }
+      }
+      @media (max-width: 400px) {
+        .dynamic-island-navbar {
+          width: 85vw;
+          padding: 0.9rem 0.5rem;
+        }
+      }
+      .site-content {
+        margin-top: 140px;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+        background: rgba(255,255,255,0.07);
+        border-radius: 1.5rem;
+        padding: 2rem 1.5rem;
+        color: #fff;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+      }
+      .game-card {
+        background: #232326;
+        border-radius: 1.2rem;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+        color: #fff;
+        margin-bottom: 1.5rem;
+        transition: transform 0.15s;
+        cursor: pointer;
+        border: none;
+      }
+      .game-card:hover {
+        transform: translateY(-4px) scale(1.02);
+        box-shadow: 0 6px 24px rgba(0,0,0,0.18);
+      }
+      .game-card .card-img-top {
+        border-radius: 1.2rem 1.2rem 0 0;
+        object-fit: cover;
+        height: 180px;
+        background: #18181a;
+      }
+      .game-card .card-body {
+        padding: 1rem 1.2rem 1.2rem 1.2rem;
+      }
+      .game-card .btn {
+        border-radius: 1.2rem;
+      }
+      .game-detail {
+        background: #232326;
+        border-radius: 1.2rem;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+        color: #fff;
+        padding: 2rem;
+        margin-bottom: 2rem;
+      }
+      .game-detail img {
+        border-radius: 1.2rem;
+        max-width: 100%;
+        margin-bottom: 1.5rem;
+      }
+      .back-btn {
+        margin-bottom: 1.5rem;
+      }
+    </style>
+</head>
+<body>
+<div class="island-group">
+  <nav class="navbar navbar-expand-lg dynamic-island-navbar shadow p-0">
+    <a class="navbar-brand ms-3 me-2" href="#home">NowFreeGames</a>
+    <button class="navbar-toggler ms-auto me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse flex-grow-0" id="navbarNav">
+      <ul class="navbar-nav ms-auto mb-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#home" id="nav-home">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#steam" id="nav-steam">Steam</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#epic" id="nav-epic">Epic Games</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#gog" id="nav-gog">GOG</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<div class="site-content" id="site-content">
+  <!-- Content will be loaded here -->
+  <div class="text-center text-light">Loading free games...</div>
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// Fetch free games from the freestuff API (like Discord FreeStuff bot)
+const API_URL = "https://corsproxy.io/?" + encodeURIComponent("https://api.freestuffbot.xyz/v1/offers");
+
+let games = [];
+
+function getGamesByPlatform(platform) {
+  if (platform === "home") return games;
+  if (platform === "epic") platform = "epic games store";
+  if (platform === "gog") platform = "gog.com";
+  return games.filter(game => game.platforms.map(p => p.toLowerCase()).includes(platform));
+}
+
+function renderGameCards(gameList) {
+  if (!gameList.length) {
+    return `<div class="text-center text-light">No free games found for this platform right now.</div>`;
+  }
+  return `<div class="row">
+    ${gameList.map(game => `
+      <div class="col-md-6 col-lg-4 mb-4">
+        <div class="card game-card h-100" onclick="showGameDetail('${game.id}')">
+          <img src="${game.image}" class="card-img-top" alt="${game.title}">
+          <div class="card-body">
+            <h5 class="card-title">${game.title}</h5>
+            <span class="badge bg-secondary mb-2">${game.platforms.join(', ')}</span>
+            <p class="card-text">${game.description ? game.description.substring(0, 80) : ''}...</p>
+            <button class="btn btn-outline-light btn-sm mt-2" onclick="event.stopPropagation(); showGameDetail('${game.id}')">View Details</button>
+          </div>
+        </div>
+      </div>
+    `).join('')}
+  </div>`;
+}
+
+function renderGameDetail(game) {
+  return `
+    <div class="game-detail">
+      <button class="btn btn-outline-light back-btn" onclick="goBack()">&larr; Back</button>
+      <img src="${game.image}" alt="${game.title}">
+      <h2>${game.title}</h2>
+      <span class="badge bg-secondary mb-2">${game.platforms.join(', ')}</span>
+      <p>${game.description || ''}</p>
+      <a href="${game.url}" target="_blank" class="btn btn-success mt-3">Go to Game</a>
+    </div>
+  `;
+}
+
+function loadContent(hash) {
+  let page = (hash || "#home").replace("#", "");
+  document.querySelectorAll('.nav-link').forEach(link => link.classList.remove('active'));
+  const nav = document.getElementById('nav-' + page);
+  if (nav) nav.classList.add('active');
+
+  // Game detail page
+  if (page.startsWith("game-")) {
+    const game = games.find(g => g.id == page.replace("game-", ""));
+    if (game) {
+      document.getElementById('site-content').innerHTML = renderGameDetail(game);
+      return;
+    }
+  }
+
+  // Main pages
+  let gameList;
+  if (["steam", "epic", "gog"].includes(page)) {
+    gameList = getGamesByPlatform(page);
+  } else {
+    gameList = games;
+  }
+  document.getElementById('site-content').innerHTML = renderGameCards(gameList);
+}
+
+window.showGameDetail = function(id) {
+  location.hash = "game-" + id;
+};
+
+window.goBack = function() {
+  history.back();
+};
+
+// Fetch games and initialize
+async function fetchGamesAndInit() {
+  try {
+    const res = await fetch(API_URL);
+    let data = await res.json();
+    // Only keep games (not DLC, etc.)
+    games = data.filter(g => g.type === "Game");
+    loadContent(location.hash);
+  } catch (e) {
+    document.getElementById('site-content').innerHTML = `<div class="text-danger text-center">Failed to load free games.</div>`;
+  }
+}
+
+window.addEventListener('DOMContentLoaded', fetchGamesAndInit);
+window.addEventListener('hashchange', () => loadContent(location.hash));
+</script>
+</body>
+</html>
