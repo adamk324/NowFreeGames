@@ -8,8 +8,6 @@ A simple web app to browse currently free games on Steam, Epic Games Store, and 
 ![Game Cards](images/game-cards.png)
 ![Game Detail](images/game-detail.png)
 
-*(Screenshots: Place your own images in the `images/` folder with the above filenames, or update the links.)*
-
 ---
 
 ## Features
