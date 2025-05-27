@@ -1,3 +1,5 @@
+#THIS IS JUST A TEST! If you know how can i work this out that it gets the free games. just fix it. its open.
+
 # NowFreeGames
 
 A simple web app to browse currently free games on Steam, Epic Games Store, and GOG, powered by [api.freestuffbot.xyz](https://api.freestuffbot.xyz/).
