@@ -1,3 +1,4 @@
+[GithubPages Link](https://adamk324.github.io/NowFreeGames/#home)
 #THIS IS JUST A TEST! If you know how can i work this out that it gets the free games. just fix it. its open.
 
 # NowFreeGames
@@ -44,7 +45,7 @@ A simple web app to browse currently free games on Steam, Epic Games Store, and 
 ## How to run
 
 1. Clone this repo
-2. Open `index.html` in your browser, or use [GitHub Pages](https://pages.github.com/) for live hosting
+2. Open `index.html` in your browser, or use [GitHub Pages](https://adamk324.github.io/NowFreeGames/#home) for live hosting
 
 ---
 
